@@ -1,0 +1,496 @@
+:root {
+  --primary-color: #0044cc;
+  --secondary-color: #e6f0ff;
+  --font-size: 1rem;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--font-size);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+header {
+  background: var(--primary-color);
+  padding: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: white;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #003399;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.btn-facebook {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 68, 204, 0.8);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-facebook:hover {
+  background-color: rgba(0, 51, 153, 0.8);
+}
+
+.info-box {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #003399;
+}
+
+.noticias {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.carrusel {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carrusel-item {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+  text-align: center;
+  padding: 1rem;
+}
+
+.carrusel-item img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.btn-carrusel {
+  position: absolute;
+  top: 150%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* Estilos para la sección de Clubes y Monumentos */
+.clubes-monumentos {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.clubes-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.club, .monumento {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club:hover, .monumento:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.club img, .monumento img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.club h3, .monumento h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.club p, .monumento p {
+  padding: 0 1rem 1rem;
+  color: #555;
+}
+
+.btn-leer-mas {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-leer-mas:hover {
+  background-color: #003399;
+}
+
+.info-adicional {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 1rem;
+}
+
+/* Estilos para la sección de Guardianes de la Malinche */
+.guardianes-malinche {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.blog-post {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 800px;
+}
+
+.blog-post h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.blog-post p {
+  color: #555;
+}
+
+.blog-post button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.blog-post button:hover {
+  background-color: #003399;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  animation: fadeIn 1s ease-out;
+}
+
+.animated.fadeInUp {
+  animation: fadeIn 0.8s ease-out;
+}
+/* Estilos para la sección de Programas */
+.programas {
+  text-align: center;
+  margin: 2rem 0;
+}
+.carreras {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.carrera {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrera:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carrera img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.carrera-titulo {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.carrera-contenido {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.carrera-contenido p {
+  margin: 1rem 0;
+}
+
+.btn-leer-mas {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-leer-mas:hover {
+  background-color: #003399;
+}
+
+.cbta-container {
+  position:sticky;
+  
+}
+
+.cbta-container img{
+  width: 70%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Estilos para la sección de Ubicación */
+.ubicacion {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.ubicacion h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.ubicacion .info-box {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.ubicacion p {
+  font-size: 1rem;
+  color: #555;
+  margin: 1rem 0;
+}
+
+.ubicacion .mapa {
+  margin-top: 1rem;
+}
+
+.ubicacion iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+.cc-container {
+  position:sticky;
+  
+}
+
+.cc-container img{
+  width: 70%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Estilos para la sección de SAETAM */
+.saetam {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.saetam h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.saetam .info-box {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.saetam p {
+  font-size: 1rem;
+  color: #555;
+  margin: 1rem 0;
+}
+
+.saetam .btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.saetam .btn-primary:hover {
+  background-color: #003399;
+}
+.info-box {
+  position:sticky;
+  
+}
+
+.info-box img{
+  width: 80%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.ab-container {
+  position:sticky;
+  
+}
+
+.ab-container img{
+  width: 70%;
+  max-height: 550px;
+  object-fit: cover;
+  border-radius: 10px;
+}

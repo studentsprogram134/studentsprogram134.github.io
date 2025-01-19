@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monumentos</title>
+    <link rel="stylesheet" href="styles.css">
+    <header>
+        <nav class="menu animated fadeIn">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="programas.html">Programas</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+    <style>
+      
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Color de fondo suave */
+}
+
+h1 {
+    text-align: center;
+    color: aliceblue;
+    margin-top: 20px;
+    font-size: 2.5em; /* Tamaño de fuente grande */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en cada fila */
+    grid-gap: 20px; /* Espacio entre las imágenes */
+    justify-items: center; /* Centra las imágenes dentro de cada celda */
+    padding: 20px;
+}
+
+.carss {
+    width: 200px; /* Ancho fijo para las imágenes */
+    height: 200px; /* Altura fija para que todas sean del mismo tamaño */
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden; /* Oculta cualquier contenido que sobrepase el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para un toque elegante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.carss figure {
+    margin: 0;
+    height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carss img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que las imágenes se ajusten correctamente al tamaño */
+    transition: transform 0.3s ease-in-out; /* Suaviza la transición de las imágenes */
+}
+
+.carss img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
+}
+
+.carss figcaption {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333; /* Color del texto */
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.modal h3 {
+    color: #007BFF;
+}
+
+.modal p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Monumentos</h1>
+    </header>
+
+    <section class="monumentos">
+        <div class="container">
+            <!-- Contenido de los monumentos -->
+            <div class="carss" onclick="openModal('universario1981')">
+                <figure>
+                    <img src="uno.jpg" alt="Universario de 1981 - 1996">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+    
+
+            <div class="carss" onclick="openModal('aniversario')">
+                <figure>
+                    <img src="tres.jpg" alt="Aniversario">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+
+            <div class="carss" onclick="openModal('ambienteArboles')">
+                <figure>
+                    <img src="cuatro.jpg" alt="Ambiente con más árboles para cuidar al planeta">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+
+            <div class="carss" onclick="openModal('futuroLibre')">
+                <figure>
+                    <img src="cinco.jpg" alt="Futuro libre y sin violencia">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+
+            <div class="carss" onclick="openModal('aulasAcademicas')">
+                <figure>
+                    <img src="seis.jpg" alt="Aulas académicas para los estudios">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+
+            <div class="carss" onclick="openModal('raicesIndigenas')">
+                <figure>
+                    <img src="siete.jpg" alt="Raíces indígenas">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+
+            <div class="carss" onclick="openModal('cientificosDestacados')">
+                <figure>
+                    <img src="ocho.jpg" alt="Científicos más destacados">
+                <figcaption></figcaption>
+                </figure>
+            </div>
+
+            <div class="carss" onclick="openModal('calendarioMaya')">
+                <figure>
+                    <img src="nueve.jpg" alt="Calendario Maya">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+
+            <div class="carss" onclick="openModal('laboratorioEstablecido')">
+                <figure>
+                    <img src="diez.jpg" alt="Establecimiento del laboratorio">
+                    <figcaption></figcaption>
+                </figure>
+            </div> 
+
+            <div class="carss" onclick="openModal('inauguracionCBTA')">
+                <figure>
+                    <img src="once.jpg" alt="Inaguración del CBTA 134 en 1987">
+                    <figcaption></figcaption>
+                </figure>
+            </div> 
+        </div>
+    </section>
+
+    <!-- Modal para mostrar la información -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Monumento</h3>
+            <p id="modal-description">Descripción del monumento...</p>
+            <button class="close-btn" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir el modal y mostrar la información
+        function openModal(monumento) {
+            let title = "";
+            let description = "";
+
+            // Información según el monumento seleccionado
+            switch(monumento) {
+                case 'universario1981':
+                    title = "Universario de 1981 - 1996";
+                    description = "Este monumento conmemora los 15 años del aniversario de la fundación de la institución.";
+                    break;
+                case 'aniversario':
+                    title = "Aniversario";
+                    description = "Monumento que celebra el aniversario de la institución y su crecimiento a lo largo del tiempo.";
+                    break;
+                case 'ambienteArboles':
+                    title = "Un ambiente con más árboles para cuidar al planeta";
+                    description = "Escultura que promueve el cuidado del medio ambiente mediante la plantación de más árboles.";
+                    break;
+                case 'futuroLibre':
+                    title = "Un futuro libre y sin violencia";
+                    description = "El monumento refleja la visión de una sociedad sin violencia, buscando la paz para las futuras generaciones.";
+                    break;
+                case 'aulasAcademicas':
+                    title = "Aulas académicas para los estudios";
+                    description = "Este monumento simboliza el esfuerzo por mejorar las instalaciones académicas para el bienestar de los estudiantes.";
+                    break;
+                case 'raicesIndigenas':
+                    title = "Raíces indígenas";
+                    description = "Monumento que rinde homenaje a las culturas indígenas y su influencia en la historia.";
+                    break;
+                case 'cientificosDestacados':
+                    title = "Científicos más destacados";
+                    description = "Una escultura que reconoce el trabajo de los científicos que han hecho grandes aportes a la humanidad.";
+                    break;
+                case 'calendarioMaya':
+                    title = "Calendario Maya";
+                    description = "Monumento que representa el complejo calendario maya y su importancia en la cultura mesoamericana.";
+                    break;
+                case 'laboratorioEstablecido':
+                    title = "Establecimiento del laboratorio";
+                    description = "Monumento que conmemora el establecimiento del laboratorio en la institución en 1987.";
+                    break;
+                case 'inauguracionCBTA':
+                    title = "Inauguración del CBTA en 1987";
+                    description = "Este monumento celebra la inauguración del Centro de Bachillerato Tecnológico Agropecuario (CBTA).";
+                    break;
+            }
+
+            // Actualizar el modal con la información correspondiente
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-description").innerText = description;
+
+            // Mostrar el modal
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

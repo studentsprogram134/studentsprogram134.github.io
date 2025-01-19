@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clubes y Monumentos - CBTA Tlaxcala</title>
+  <link rel="stylesheet" href="styles.css">
+  <header>
+    <nav class="menu animated fadeIn">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="programas.html">Programas</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="monumentos.html">monumentos</a></li>
+      </ul>
+    </nav>
+  </header>
+    <style>
+        /* Estilo para el modal */
+        .modal {
+            display: none; /* Ocultamos el modal por defecto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .modal img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .modal-header {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Diseño flexible para diferentes tamaños de pantalla */
+            gap: 30px; /* Aumentamos el espaciado entre las tarjetas */
+            padding: 20px;
+        }
+
+        .card {
+            cursor: pointer;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            text-align: center;
+            margin-bottom: 20px; /* Espacio en la parte inferior de cada tarjeta */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;  /* Todas las imágenes tendrán el mismo ancho */
+            height: 200px;  /* Altura fija para que todas las imágenes tengan el mismo tamaño */
+            object-fit: cover; /* Asegura que la imagen se recorte si es necesario para encajar */
+            margin-top: 10px;
+        }
+
+        .card figcaption {
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+        <h1>Clubes</h1>
+    
+    <section class="clubes">
+        <div class="grid-container">
+            <!-- Tarjetas de Clubes -->
+            <div class="card" onclick="openModal('robotica')">
+                <figure>
+                    <img src="robot.jpg" alt="Club de Robótica">
+                    <figcaption>Robótica</figcaption>
+                </figure>
+            </div>
+            <div class="card" onclick="openModal('basquet')">
+                <figure>
+                    <img src="basquet.jpg" alt="Club de Básquet">
+                    <figcaption>Básquet</figcaption>
+                </figure>
+            </div>
+
+            <div class="card" onclick="openModal('rondalla')">
+                <figure>
+                    <img src="rondalla.jpg" alt="Club de Rondalla">
+                    <figcaption>Rondalla</figcaption>
+                </figure>
+            </div>
+            <div class="card" onclick="openModal('escolta')">
+                <figure>
+                    <img src="escolta.jpeg" alt="Club de Escolta">
+                    <figcaption>Escolta</figcaption>
+                </figure>
+            </div>
+            <div class="card" onclick="openModal('voli')">
+                <figure>
+                    <img src="voli.jpg" alt="Club de Vóley">
+                    <figcaption>Vóley</figcaption>
+                </figure>
+            </div>
+            <div class="card" onclick="openModal('banda')">
+                <figure>
+                    <img src="banda.jpeg" alt="Club de Banda de Guerra">
+                    <figcaption>Banda de Guerra</figcaption>
+                </figure>
+            </div>
+    </section>
+
+    <!-- Modal de información -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <h2 id="modal-title">Título del Club</h2>
+            <img id="modal-image" src="" alt="Imagen del Club">
+            <p id="modal-description">Descripción del club...</p>
+        </div>
+    </div>
+
+    <script>
+        // Datos de los clubes
+        const clubsData = {
+            robotica: {
+                title: 'Robótica',
+                description: 'Un club especializado en el desarrollo de proyectos de robótica y tecnología.',
+                image: 'robot.jpg'
+            },
+            basquet: {
+                title: 'Básquet',
+                description: 'Practica y mejora tus habilidades en el baloncesto, desde el básico hasta el avanzado.',
+                image: 'basquet.jpg'
+            },
+            rondalla: {
+                title: 'Rondalla',
+                description: 'Club musical que interpreta música tradicional con instrumentos como guitarra y requinto.',
+                image: 'rondalla.jpg'
+            },
+            escolta: {
+                title: 'Escolta',
+                description: 'Club dedicado a la formación de los estudiantes en la disciplina de la escolta.',
+                image: 'escolta.jpeg'
+            },
+            voley: {
+                title: 'Vóley',
+                description: 'Club donde se practican partidos y técnicas de vóley para todos los niveles.',
+                image: 'voli.jpg'
+            },
+            banda: {
+                title: 'Banda de Guerra',
+                description: 'Formación musical para tocar en ceremonias y eventos.',
+                image: 'banda.jpeg'
+            },
+        };
+
+        function openModal(clubId) {
+            const club = clubsData[clubId];
+            if (club) {
+                document.getElementById('modal-title').innerText = club.title;
+                document.getElementById('modal-image').src = club.image;
+                document.getElementById('modal-description').innerText = club.description;
+                document.getElementById('modal').style.display = 'flex';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</head>
+<body>
+  <footer class="animated fadeIn">
+    <p>&copy; 2025 CBTA Tlaxcala. Todos los derechos reservados.</p>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>
